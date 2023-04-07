@@ -10,22 +10,6 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        function submitted(){
-            Email.send({
-                Host : "smtp.gmail.com",
-                Username : "assignment3.csp@gmail.com",
-                Password : "Assignment@2023",
-                To : "rattunitin0@gmail.com",
-                From : "assignment3.csp@gmail.com",
-                Subject : "Your information",
-                Body : "Name: " + $("#first-name").prop("value") +" " + $("#last-name").prop("value")
-                    + "<br>Email: " + $("#email").prop("value")
-                    + "<br>Number: " + $("#number").prop("value")
-                    + "<br>Message: " + $("#feedback").prop("value")
-                }).then(
-                    message => alert("form submitted sucessfully.")
-                );
-        }
         $(function(){
             $("#date").datepicker({ dateFormat: 'dd/mm/yy'});
         })
@@ -64,7 +48,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form id="form" onsubmit="submitted(); reset(); return false;">
+        <form action="https://formsubmit.co/rattunitin0@gmail.com" method="POST" id="form" >
             <div class="unit"><label>First Name:<input class="input" type="text" name="name" id="first-name" required></label></div>
             <div class="unit"><label>Last Name:<input class="input" type="text" name="name" id="last-name" required></label></div>
             <div class="unit"><label>Email:<input class="input" type="email" name="email" id="email" required></label></div>
